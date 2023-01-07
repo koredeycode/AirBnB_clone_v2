@@ -86,6 +86,7 @@ class Place(BaseModel, Base):
                 attribute amenity_ids. accepts only Amenity
                 objects
             '''
+            from models.amenity import Amenity
             if obj is not None:
                 if isinstance(obj, Amenity):
                     if obj.id not in self.amenity_ids:
