@@ -8,6 +8,7 @@ import os
 env.user = 'ubuntu'
 env.hosts = ['54.160.126.209', '54.208.232.134']
 
+
 def do_pack():
     """create a gzip archive"""
 
@@ -24,6 +25,7 @@ def do_pack():
     if local("tar -cvzf {} web_static".format(archive)).failed:
         return None
     return archive
+
 
 def do_deploy(archive_path):
     """distribute an archive tho the webservers"""
@@ -52,6 +54,7 @@ def do_deploy(archive_path):
             .format(name)).failed:
         return False
     return True
+
 
 def deploy():
     """fully deploy an archive to the webservers"""

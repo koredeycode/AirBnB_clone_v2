@@ -1,6 +1,0 @@
-from requests import get
-
-url = 'http://koredeycode.tech'
-headers = {'User-Agent': 'NaMe'}
-
-res = get(url, headers=headers)
