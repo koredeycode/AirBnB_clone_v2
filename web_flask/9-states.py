@@ -27,6 +27,7 @@ def states_id(id):
 
 @app.teardown_appcontext
 def close_database(exception=None):
+    """close the database connection"""
     if exception is None:
         storage.close()
     else:

@@ -17,6 +17,7 @@ def cities_by_states():
 
 @app.teardown_appcontext
 def close_database(exception=None):
+    """close the database connection"""
     if exception is None:
         storage.close()
     else:
