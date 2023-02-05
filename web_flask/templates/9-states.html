@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	{% if context is mapping %}
+		<H1>States</H1>
+		<UL>
+		{% for state in context.values() | sort(attribute="name") %}
+			<LI>{{ state.id }}: <B>{{ state.name }}</B></LI>
+		{% endfor %}
+		</UL>
+	{% elif context is defined %}
+		<H1>State:</H1>
+		<H3>Cities:</H3>
+		<UL>
+		{% for city in context.cities | sort(attribute="name") %}
+			<LI>{{ city.id }}: <B>{{ city.name }}</B></LI>
+		{% endfor %}
+		</UL>
+	{% else %}
+		<H1>Not Found!</H1>
+	{% endif %}
+{% endblock %}
