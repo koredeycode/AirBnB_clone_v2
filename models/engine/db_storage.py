@@ -19,7 +19,6 @@ classes = {"User": User, "State": State, "City": City,
            "Amenity": Amenity, "Place": Place, "Review": Review}
 
 
-
 class DBStorage:
     '''database storage engine for mysql storage'''
     __engine = None
