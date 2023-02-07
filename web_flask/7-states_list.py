@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-"""starts a Flask web application"""
+"""
+starts a Flask web application
+routes:
+    /states_list
+"""
 
 from flask import Flask, render_template
 from models import storage
