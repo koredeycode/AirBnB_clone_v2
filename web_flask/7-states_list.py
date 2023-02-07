@@ -15,18 +15,18 @@ app = Flask(__name__)
 
 @app.route('/states_list', methods=['GET'], strict_slashes=False)
 def states_list():
-    """The state list view"""
+    """Displays the HTML page with a list of all state objects
+
+    They are sorted by name
+    """
     states = storage.all(State)
     return (render_template("7-states_list.html", states=states))
 
 
 @app.teardown_appcontext
-def close_database(exception=None):
+def close_database(exception):
     """close the database connection"""
-    if exception is None:
-        storage.close()
-    else:
-        pass
+    storage.close()
 
 
 if __name__ == "__main__":
