@@ -24,9 +24,12 @@ def states_list():
 
 
 @app.teardown_appcontext
-def close_database(exception):
+def close_database(exception=None):
     """close the database connection"""
-    storage.close()
+    if exception is None:
+        storage.close()
+    else:
+        pass
 
 
 if __name__ == "__main__":
